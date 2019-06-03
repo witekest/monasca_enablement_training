@@ -11909,13 +11909,29 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Jupyter notebook</p>
+<p><a href="https://github.com/SUSE/cloud/blob/master/presentations/2019-support-enablement-training/monasca/Monasca.ipynb">https://github.com/SUSE/cloud/blob/master/presentations/2019-support-enablement-training/monasca/Monasca.ipynb</a></p>
+
+</div>
+</div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Architecture">Architecture<a class="anchor-link" href="#Architecture">&#182;</a></h1><hr>
-<p><img src="architecture.svg" alt="Monasca Architecture"></p>
+<h1 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">&#182;</a></h1><hr>
+<ol>
+<li>Introduction</li>
+<li>Architecture</li>
+<li>API resources</li>
+<li>Documentation</li>
+<li>Failure analysis</li>
+</ol>
 
 </div>
 </div>
@@ -11932,6 +11948,16 @@ a.anchor-link {
 <li>PUSH model</li>
 <li>Amazon CloudWatch equivalent</li>
 </ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Architecture">Architecture<a class="anchor-link" href="#Architecture">&#182;</a></h1><hr>
+<p><img src="architecture.svg" alt="Monasca Architecture"></p>
 
 </div>
 </div>
@@ -12402,7 +12428,7 @@ env: OS_INTERFACE=public
 </div>
 </div>
 
-</div>
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
@@ -13745,25 +13771,159 @@ GET|PUT|PATCH|DELETE /v2.0/alarms/{alarm-id}</code></pre>
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Documentation</span>
-
-<span class="c1">## Upstream</span>
-
-<span class="o">*</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">openstack</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">monasca</span><span class="o">-</span><span class="n">api</span>
-<span class="o">*</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">opendev</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">openstack</span><span class="o">/</span><span class="n">monasca</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">branch</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">monasca</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="n">spec</span><span class="o">.</span><span class="n">md</span>
-<span class="o">*</span> 
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Documentation">Documentation<a class="anchor-link" href="#Documentation">&#182;</a></h1><h2 id="Upstream">Upstream<a class="anchor-link" href="#Upstream">&#182;</a></h2><ul>
+<li><p>Landing page<br>
+<a href="https://docs.openstack.org/monasca-api">https://docs.openstack.org/monasca-api</a></p>
+</li>
+<li><p>API reference<br>
+<a href="https://opendev.org/openstack/monasca-api/src/branch/master/docs/monasca-api-spec.md">https://opendev.org/openstack/monasca-api/src/branch/master/docs/monasca-api-spec.md</a></p>
+</li>
+<li><p>Agent<br>
+<a href="https://opendev.org/openstack/monasca-agent/src/branch/master/README.rst">https://opendev.org/openstack/monasca-agent/src/branch/master/README.rst</a></p>
+</li>
+<li><p>Agent plugins<br>
+<a href="https://opendev.org/openstack/monasca-agent/src/branch/master/docs/Plugins.md">https://opendev.org/openstack/monasca-agent/src/branch/master/docs/Plugins.md</a></p>
+</li>
+</ul>
 
 </div>
 </div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Documentation">Documentation<a class="anchor-link" href="#Documentation">&#182;</a></h1><h2 id="SUSE">SUSE<a class="anchor-link" href="#SUSE">&#182;</a></h2><ul>
+<li><p>Crowbar<br>
+<a href="http://docserv.nue.suse.com/documents/SUSE_OpenStack_Cloud_9/suse-openstack-cloud-crowbar-operations/html/soc-monitoring.html">http://docserv.nue.suse.com/documents/SUSE_OpenStack_Cloud_9/suse-openstack-cloud-crowbar-operations/html/soc-monitoring.html</a></p>
+</li>
+<li><p>Ardana<br>
+<a href="http://docserv.nue.suse.com/documents/SUSE_OpenStack_Cloud_9/suse-openstack-cloud-operations/html/topic_ttn_5fg_4v.html">http://docserv.nue.suse.com/documents/SUSE_OpenStack_Cloud_9/suse-openstack-cloud-operations/html/topic_ttn_5fg_4v.html</a></p>
+</li>
+</ul>
 
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Logs">Logs<a class="anchor-link" href="#Logs">&#182;</a></h1><hr>
+
+<pre><code>/var/log/monasca*
+/var/log/kafka
+/var/log/influxdb
+/var/log/elasticsearch
+/var/log/elasticsearch-curator
+/var/log/kibana</code></pre>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Failure-analysis">Failure analysis<a class="anchor-link" href="#Failure-analysis">&#182;</a></h1><h2 id="Check-persisting-pipeline">Check persisting pipeline<a class="anchor-link" href="#Check-persisting-pipeline">&#182;</a></h2><ul>
+<li><p>monasca-agent</p>
+</li>
+<li><p>monasca-api</p>
+</li>
+<li><p>Apache Kafka</p>
+</li>
+<li><p>monasca-persister</p>
+</li>
+<li><p>InfluxDB/Cassandra</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Available-tools">Available tools<a class="anchor-link" href="#Available-tools">&#182;</a></h1><ul>
+<li><p><a href="https://docs.openstack.org/python-monascaclient/latest/cli/index.html">monasca CLI</a></p>
+</li>
+<li><p><a href="https://docs.influxdata.com/influxdb/v1.3/tools/shell/">InfluxDB CLI</a></p>
+</li>
+<li><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_exploring_your_cluster.html">Elasticsearch API</a></p>
+</li>
+<li><p>Apache Kafka tools</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Apache-Kafka-tools">Apache Kafka tools<a class="anchor-link" href="#Apache-Kafka-tools">&#182;</a></h1><ul>
+<li><p>list topics</p>
+
+<pre><code>kafka-topics.sh --list --zookeeper &lt;zookeeper_ip&gt;:2181</code></pre>
+</li>
+<li><p>list consumers</p>
+
+<pre><code>kafka-consumer-groups.sh --list --zookeeper &lt;zookeeper_ip&gt;:2181</code></pre>
+</li>
+<li><p>show persister consumer statistics</p>
+
+<pre><code>kafka-consumer-groups.sh --zookeeper &lt;zookeeper_ip&gt;:2181 --describe --group 1_metrics</code></pre>
+</li>
+<li><p>look up persister measurements</p>
+
+<pre><code>kafka-console-consumer.sh --zookeeper &lt;zookeeper_ip&gt;:2181 --topic metrics</code></pre>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Common-pitfalls">Common pitfalls<a class="anchor-link" href="#Common-pitfalls">&#182;</a></h1><h2 id="Multi-tenancy">Multi-tenancy<a class="anchor-link" href="#Multi-tenancy">&#182;</a></h2><hr>
+<ul>
+<li><p>You must be assigned to the OpenStack project you want to monitor.</p>
+</li>
+<li><p>You must have access to the OpenStack platform as a user with the <em>monasca-user</em> role.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Common-pitfalls">Common pitfalls<a class="anchor-link" href="#Common-pitfalls">&#182;</a></h1><h2 id="Elasticseach-heap-size">Elasticseach heap size<a class="anchor-link" href="#Elasticseach-heap-size">&#182;</a></h2><hr>
+<ul>
+<li>Set heap size at 50% of the available memory, but not more than 31 GB.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Thank-You">Thank You<a class="anchor-link" href="#Thank-You">&#182;</a></h1><h2 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h2>
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
