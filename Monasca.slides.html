@@ -12556,7 +12556,10 @@ env: OS_INTERFACE=public
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Metrics">Metrics<a class="anchor-link" href="#Metrics">&#182;</a></h1><hr>
-<p><code>POST /v2.0/metrics</code></p>
+
+<pre><code>POST /v2.0/metrics
+
+# monasca metric-create</code></pre>
 <ul>
 <li>name (string(255), required) - The name of the metric, e.g. cpu.user_perc, kafka.consumer_lag</li>
 <li>dimensions ({string(255): string(255)}, optional) - A dictionary consisting of (key, value) pairs used to uniquely identify a metric and slice and dice on.</li>
@@ -12629,7 +12632,10 @@ env: OS_INTERFACE=public
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="List-metrics">List metrics<a class="anchor-link" href="#List-metrics">&#182;</a></h1><hr>
 <p>Lists all the unique metrics in the system</p>
-<p><code>GET /v2.0/metrics</code></p>
+
+<pre><code>GET /v2.0/metrics
+
+# monasca metric-list</code></pre>
 <ul>
 <li><p>A unique metric is identitifed by it's name and dimensions.</p>
 </li>
@@ -12972,7 +12978,10 @@ List metrics for this tenant.
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Metrics-Measurements">Metrics Measurements<a class="anchor-link" href="#Metrics-Measurements">&#182;</a></h1><hr>
 <p>Operations for returning measurements.</p>
-<p><code>GET /v2.0/metrics/measurements</code></p>
+
+<pre><code>GET /v2.0/metrics/measurements
+
+# monasca measurement-list</code></pre>
 <ul>
 <li>Name and dimensions supplied as query parameters.</li>
 <li>Startime, endtime, offset, limit and group_by options available.</li>
@@ -13090,7 +13099,10 @@ List measurements for the specified metric.
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Metrics-Statistics">Metrics Statistics<a class="anchor-link" href="#Metrics-Statistics">&#182;</a></h1><hr>
 <p>Returns aggregate statistics for a metric over fixed windows in time.</p>
-<p><code>GET /v2.0/metrics/statistics</code></p>
+
+<pre><code>GET /v2.0/metrics/statistics
+
+# monasca metric-statistics</code></pre>
 <ul>
 <li>Name and dimensions supplied as query parameters</li>
 <li>Statistics functions include: <code>avg</code>, <code>min</code>, <code>max</code>, <code>sum</code> and <code>count</code></li>
@@ -13203,7 +13215,10 @@ monasca metric-statistics: error: too few arguments
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Notification-Methods">Notification Methods<a class="anchor-link" href="#Notification-Methods">&#182;</a></h1><hr>
 <p>Specify the name, type and address to send a notification to.</p>
-<p><code>GET, POST, PUT, DELETE, PATCH /v2.0/notification-methods</code></p>
+
+<pre><code>GET, POST, PUT, DELETE, PATCH /v2.0/notification-methods
+
+# monasca notification-[list,create,update,delete,patch]</code></pre>
 <ul>
 <li>Notification methods are associated with actions in alarms and are invoked when alarm state transitions occur.</li>
 <li>Supported notification methods are:<ul>
@@ -13387,7 +13402,9 @@ Create notification.
 <p>Operations for creating, reading updating and deleting alarm definitions.</p>
 
 <pre><code>GET|POST /v2.0/alarm-definitions
-GET|PUT|PATCH|DELETE /v2.0/alarm-definitions/{alarm-definition-id}</code></pre>
+GET|PUT|PATCH|DELETE /v2.0/alarm-definitions/{alarm-definition-id}
+
+# monasca alarm-definition-[list,create,show,update,patch,delete]</code></pre>
 <ul>
 <li><p>Alarm definitions are templates that are used to automatically create alarms based on matching metric names and dimensions</p>
 <ul>
@@ -13736,7 +13753,9 @@ Successfully created metric
 <p>Alarms are created when incoming metrics match alarm definitions</p>
 
 <pre><code>GET /v2.0/alarms
-GET|PUT|PATCH|DELETE /v2.0/alarms/{alarm-id}</code></pre>
+GET|PUT|PATCH|DELETE /v2.0/alarms/{alarm-id}
+
+# monasca alarm-[list,show,update,patch,delete]</code></pre>
 <ul>
 <li>alarm_definition_id (string, optional) - Alarm definition ID to filter by.</li>
 <li>metric_name (string(255), optional) - Name of metric to filter by.</li>
