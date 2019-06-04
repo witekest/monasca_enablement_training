@@ -13757,7 +13757,13 @@ GET|PUT|PATCH|DELETE /v2.0/alarms/{alarm-id}</code></pre>
 <h1 id="UNDETERMINED-alarm-state">UNDETERMINED alarm state<a class="anchor-link" href="#UNDETERMINED-alarm-state">&#182;</a></h1><ul>
 <li><p>There are three states of an alarm, <code>OK</code>, <code>ALARM</code> and <code>UNDETERMINED</code>.</p>
 </li>
-<li><p>The <code>UNDETERMINED</code> alarm state occurs when metrics are no longer being received by an alarm.</p>
+<li><p>The <code>UNDETERMINED</code> alarm state occurs when:</p>
+<ul>
+<li><p>metrics are no longer being received by an alarm,</p>
+</li>
+<li><p>metrics just appeared in the system.</p>
+</li>
+</ul>
 </li>
 <li><p>For example, a service is disabled, a system goes down, the network experiences a disruption.</p>
 </li>
