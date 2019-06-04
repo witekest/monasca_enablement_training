@@ -12039,6 +12039,24 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Ceilometer">Ceilometer<a class="anchor-link" href="#Ceilometer">&#182;</a></h1><hr>
+<ul>
+<li><p>Monasca is the only supported backend in SUSE OpenStack Cloud.</p>
+</li>
+<li><p>All Ceilometer measurements can be queried using Monasca API.</p>
+</li>
+<li><p>Ceilometer measurements can be used to define Monasca alarms.</p>
+</li>
+</ul>
+<h2 id="Documentation">Documentation<a class="anchor-link" href="#Documentation">&#182;</a></h2><p><a href="https://opendev.org/openstack/monasca-ceilometer">https://opendev.org/openstack/monasca-ceilometer</a></p>
+
+</div>
+</div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12367,6 +12385,14 @@ store logs in database</p>
 <li>Filter only project data</li>
 </ul>
 
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Monasca-API-resources">Monasca API resources<a class="anchor-link" href="#Monasca-API-resources">&#182;</a></h1>
 </div>
 </div>
 </div></section></section><section><section>
@@ -13817,6 +13843,7 @@ GET|PUT|PATCH|DELETE /v2.0/alarms/{alarm-id}</code></pre>
 <h1 id="Logs">Logs<a class="anchor-link" href="#Logs">&#182;</a></h1><hr>
 
 <pre><code>/var/log/monasca*
+/var/log/apache2/monasca*
 /var/log/kafka
 /var/log/influxdb
 /var/log/elasticsearch
@@ -13909,9 +13936,70 @@ GET|PUT|PATCH|DELETE /v2.0/alarms/{alarm-id}</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Common-pitfalls">Common pitfalls<a class="anchor-link" href="#Common-pitfalls">&#182;</a></h1><h2 id="Kafka-connectivity">Kafka connectivity<a class="anchor-link" href="#Kafka-connectivity">&#182;</a></h2><hr>
+<ul>
+<li><p>Stop/start services.</p>
+</li>
+<li><p>Follow the starting sequence. The stopping sequence is reversed.</p>
+<ul>
+<li>Zookeeper</li>
+<li>Kafka</li>
+<li>InfluxDB/Cassandra</li>
+<li>Storm Supervisor</li>
+<li>Storm Nimbus</li>
+<li>monasca-* components</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Common-pitfalls">Common pitfalls<a class="anchor-link" href="#Common-pitfalls">&#182;</a></h1><h2 id="Cassandra-missing-metric-IDs">Cassandra missing metric IDs<a class="anchor-link" href="#Cassandra-missing-metric-IDs">&#182;</a></h2><hr>
+
+<pre><code># monasca metric-list
+The repository was unable to process your request (HTTP 500) (Request-ID: req-52f1113b-544d-4baa-8a5b-2e30d14fe7c5)
+'NoneType' object is not iterable</code></pre>
+<ul>
+<li>Use <a href="https://opendev.org/openstack/monasca-persister/src/branch/master/monasca_persister/tools/cassandra/recreate-metric-id">recreate-metric-id tool</a> to fix Cassandra metadata tables.</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Common-pitfalls">Common pitfalls<a class="anchor-link" href="#Common-pitfalls">&#182;</a></h1><h2 id="Hardware-requirements">Hardware requirements<a class="anchor-link" href="#Hardware-requirements">&#182;</a></h2><hr>
+<ul>
+<li><p>Use dedicated node</p>
+</li>
+<li><p>RAM: At least 128 GB is recommended</p>
+</li>
+<li><p>CPU: At least 24 cores is recommended</p>
+</li>
+<li><p>Hard Disk: SSD is strongly recommended</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Common-pitfalls">Common pitfalls<a class="anchor-link" href="#Common-pitfalls">&#182;</a></h1><h2 id="Elasticseach-heap-size">Elasticseach heap size<a class="anchor-link" href="#Elasticseach-heap-size">&#182;</a></h2><hr>
 <ul>
-<li>Set heap size at 50% of the available memory, but not more than 31 GB.</li>
+<li><p>Set heap size at 50% of the available memory, but not more than 31 GB.</p>
+</li>
+<li><p>Monasca Barclamp option: <code>elasticsearch.tunables.heap_size</code></p>
+</li>
 </ul>
 
 </div>
