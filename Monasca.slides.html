@@ -11926,11 +11926,16 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">&#182;</a></h1><hr>
 <ol>
-<li>Introduction</li>
-<li>Architecture</li>
-<li>API resources</li>
-<li>Documentation</li>
-<li>Failure analysis</li>
+<li><p>Introduction</p>
+</li>
+<li><p>Architecture</p>
+</li>
+<li><p>API resources</p>
+</li>
+<li><p>Documentation</p>
+</li>
+<li><p>Failure analysis</p>
+</li>
 </ol>
 
 </div>
@@ -13865,23 +13870,6 @@ GET|PUT|PATCH|DELETE /v2.0/alarms/{alarm-id}
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Logs">Logs<a class="anchor-link" href="#Logs">&#182;</a></h1><hr>
-
-<pre><code>/var/log/monasca*
-/var/log/apache2/monasca*
-/var/log/kafka
-/var/log/influxdb
-/var/log/elasticsearch
-/var/log/elasticsearch-curator
-/var/log/kibana</code></pre>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Failure-analysis">Failure analysis<a class="anchor-link" href="#Failure-analysis">&#182;</a></h1><h2 id="Check-persisting-pipeline">Check persisting pipeline<a class="anchor-link" href="#Check-persisting-pipeline">&#182;</a></h2><ul>
 <li><p>monasca-agent</p>
 </li>
@@ -13894,6 +13882,23 @@ GET|PUT|PATCH|DELETE /v2.0/alarms/{alarm-id}
 <li><p>InfluxDB/Cassandra</p>
 </li>
 </ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Logs">Logs<a class="anchor-link" href="#Logs">&#182;</a></h1><hr>
+
+<pre><code>/var/log/monasca*
+/var/log/apache2/monasca*
+/var/log/kafka
+/var/log/influxdb
+/var/log/elasticsearch
+/var/log/elasticsearch-curator
+/var/log/kibana</code></pre>
 
 </div>
 </div>
@@ -14025,6 +14030,56 @@ The repository was unable to process your request (HTTP 500) (Request-ID: req-52
 </li>
 <li><p>Monasca Barclamp option: <code>elasticsearch.tunables.heap_size</code></p>
 </li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Troubleshooting">Troubleshooting<a class="anchor-link" href="#Troubleshooting">&#182;</a></h1><h2 id="monasca-api-throws-50x-errors">monasca-api throws 50x errors<a class="anchor-link" href="#monasca-api-throws-50x-errors">&#182;</a></h2><hr>
+<h3 id="Possible-causes">Possible causes<a class="anchor-link" href="#Possible-causes">&#182;</a></h3><ul>
+<li>Kafka connection (PUSH measurements)</li>
+<li>InfluxDB/Cassandra (GET metrics, measurements, statistics)</li>
+<li>MariaDB</li>
+</ul>
+<h3 id="Possible-solution">Possible solution<a class="anchor-link" href="#Possible-solution">&#182;</a></h3><ul>
+<li>Restart components</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Troubleshooting">Troubleshooting<a class="anchor-link" href="#Troubleshooting">&#182;</a></h1><h2 id="No-measurements/logs-in-Grafana/Kibana">No measurements/logs in Grafana/Kibana<a class="anchor-link" href="#No-measurements/logs-in-Grafana/Kibana">&#182;</a></h2><hr>
+<h3 id="Possible-causes">Possible causes<a class="anchor-link" href="#Possible-causes">&#182;</a></h3><ul>
+<li>Wrong project (multi-tenancy)</li>
+<li>Horizon session expired</li>
+</ul>
+<h3 id="Possible-solutions">Possible solutions<a class="anchor-link" href="#Possible-solutions">&#182;</a></h3><ul>
+<li>Change project in Horizon</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Troubleshooting">Troubleshooting<a class="anchor-link" href="#Troubleshooting">&#182;</a></h1><h2 id="Alarm-does-not-trigger">Alarm does not trigger<a class="anchor-link" href="#Alarm-does-not-trigger">&#182;</a></h2><hr>
+<h3 id="Possible-causes">Possible causes<a class="anchor-link" href="#Possible-causes">&#182;</a></h3><ul>
+<li>Alarm definition and measurments in different projects (multi-tenancy)</li>
+<li>Monasca-thresh problem</li>
+</ul>
+<h3 id="Possible-solutions">Possible solutions<a class="anchor-link" href="#Possible-solutions">&#182;</a></h3><ul>
+<li>Redefine alarms in the right project</li>
+<li>Restart monasca-thresh and Storm (respect correct stop/start sequence)</li>
 </ul>
 
 </div>
