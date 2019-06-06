@@ -12712,7 +12712,7 @@ List metrics for this tenant.
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>monasca metric-list --dimensions <span class="nv">hostname</span><span class="o">=</span>d52-54-77-77-01-01.vj8.cloud.suse.de --starttime <span class="m">2019</span>-05-29T00:00:00Z
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>monasca metric-list --dimensions <span class="nv">hostname</span><span class="o">=</span>d52-54-77-77-01-01.vj8.cloud.suse.de --starttime <span class="m">2019</span>-05-29T00:00:00Z --limit <span class="m">20</span>
 </pre></div>
 
 </div>
@@ -12729,246 +12729,48 @@ List metrics for this tenant.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>+-----------------------------+------------------------------------------------+
-| name                        | dimensions                                     |
-+-----------------------------+------------------------------------------------+
-| cpu.frequency_mhz           | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| cpu.idle_perc               | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| cpu.idle_time               | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| cpu.percent                 | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| cpu.stolen_perc             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| cpu.system_perc             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| cpu.system_time             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| cpu.user_perc               | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| cpu.user_time               | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| cpu.wait_perc               | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| cpu.wait_time               | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| disk.inode_used_perc        | device: vda3                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | mount_point: /                                 |
-| disk.space_used_perc        | device: vda3                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | mount_point: /                                 |
-| http_response_time          | url: http://0.0.0.0:8774/                      |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: compute-api                           |
-| http_response_time          | url: http://0.0.0.0:35357/                     |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: identity-api                          |
-| http_response_time          | url: http://0.0.0.0:9292/                      |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: image-api                             |
-| http_response_time          | url: http://0.0.0.0:9696/                      |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: network-api                           |
-| http_response_time          | url: http://0.0.0.0:8080/healthcheck           |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: object-store-api                      |
-| http_response_time          | url: http://0.0.0.0:8776/                      |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: volume-api                            |
-| http_status                 | url: http://0.0.0.0:8774/                      |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: compute-api                           |
-| http_status                 | url: http://0.0.0.0:35357/                     |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: identity-api                          |
-| http_status                 | url: http://0.0.0.0:9292/                      |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: image-api                             |
-| http_status                 | url: http://0.0.0.0:9696/                      |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: network-api                           |
-| http_status                 | url: http://0.0.0.0:8080/healthcheck           |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: object-store-api                      |
-| http_status                 | url: http://0.0.0.0:8776/                      |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | service: volume-api                            |
-| io.read_kbytes_sec          | device: vda3                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | mount_point: /                                 |
-| io.read_req_sec             | device: vda3                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | mount_point: /                                 |
-| io.read_time_sec            | device: vda3                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | mount_point: /                                 |
-| io.write_kbytes_sec         | device: vda3                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | mount_point: /                                 |
-| io.write_req_sec            | device: vda3                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | mount_point: /                                 |
-| io.write_time_sec           | device: vda3                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | mount_point: /                                 |
-| load.avg_15_min             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| load.avg_1_min              | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| load.avg_5_min              | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.free_mb                 | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.swap_free_mb            | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.swap_free_perc          | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.swap_total_mb           | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.swap_used_mb            | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.total_mb                | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.usable_mb               | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.usable_perc             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.used_buffers            | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.used_cache              | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.used_real_mb            | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| mem.used_shared             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| monasca.collection_time_sec | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | component: monasca-agent                       |
-|                             | service: monitoring                            |
-| monasca.thread_count        | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-|                             | component: monasca-agent                       |
-|                             | service: monitoring                            |
-| net.in_bytes_sec            | device: eth0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_bytes_sec            | device: eth0.200                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_bytes_sec            | device: eth0.300                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_bytes_sec            | device: eth0.400                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_bytes_sec            | device: gre0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_bytes_sec            | device: gre_sys                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_bytes_sec            | device: gretap0                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_bytes_sec            | device: vxlan_sys_4789                         |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_errors_sec           | device: eth0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_errors_sec           | device: eth0.200                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_errors_sec           | device: eth0.300                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_errors_sec           | device: eth0.400                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_errors_sec           | device: gre0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_errors_sec           | device: gre_sys                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_errors_sec           | device: gretap0                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_errors_sec           | device: vxlan_sys_4789                         |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_dropped_sec  | device: eth0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_dropped_sec  | device: eth0.200                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_dropped_sec  | device: eth0.300                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_dropped_sec  | device: eth0.400                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_dropped_sec  | device: gre0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_dropped_sec  | device: gre_sys                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_dropped_sec  | device: gretap0                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_dropped_sec  | device: vxlan_sys_4789                         |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_sec          | device: eth0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_sec          | device: eth0.200                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_sec          | device: eth0.300                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_sec          | device: eth0.400                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_sec          | device: gre0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_sec          | device: gre_sys                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_sec          | device: gretap0                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.in_packets_sec          | device: vxlan_sys_4789                         |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.int_status              | device: eth0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.int_status              | device: eth0.200                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.int_status              | device: eth0.300                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.int_status              | device: eth0.400                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.int_status              | device: gre0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.int_status              | device: gre_sys                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.int_status              | device: gretap0                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.int_status              | device: vxlan_sys_4789                         |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_bytes_sec           | device: eth0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_bytes_sec           | device: eth0.200                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_bytes_sec           | device: eth0.300                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_bytes_sec           | device: eth0.400                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_bytes_sec           | device: gre0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_bytes_sec           | device: gre_sys                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_bytes_sec           | device: gretap0                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_bytes_sec           | device: vxlan_sys_4789                         |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_errors_sec          | device: eth0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_errors_sec          | device: eth0.200                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_errors_sec          | device: eth0.300                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_errors_sec          | device: eth0.400                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_errors_sec          | device: gre0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_errors_sec          | device: gre_sys                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_errors_sec          | device: gretap0                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_errors_sec          | device: vxlan_sys_4789                         |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_dropped_sec | device: eth0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_dropped_sec | device: eth0.200                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_dropped_sec | device: eth0.300                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_dropped_sec | device: eth0.400                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_dropped_sec | device: gre0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_dropped_sec | device: gre_sys                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_dropped_sec | device: gretap0                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_dropped_sec | device: vxlan_sys_4789                         |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_sec         | device: eth0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_sec         | device: eth0.200                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_sec         | device: eth0.300                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_sec         | device: eth0.400                               |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_sec         | device: gre0                                   |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_sec         | device: gre_sys                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_sec         | device: gretap0                                |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-| net.out_packets_sec         | device: vxlan_sys_4789                         |
-|                             | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
-+-----------------------------+------------------------------------------------+
+<pre>+----------------------+------------------------------------------------+
+| name                 | dimensions                                     |
++----------------------+------------------------------------------------+
+| cpu.frequency_mhz    | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+| cpu.idle_perc        | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+| cpu.idle_time        | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+| cpu.percent          | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+| cpu.stolen_perc      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+| cpu.system_perc      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+| cpu.system_time      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+| cpu.user_perc        | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+| cpu.user_time        | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+| cpu.wait_perc        | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+| cpu.wait_time        | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+| disk.inode_used_perc | device: vda3                                   |
+|                      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+|                      | mount_point: /                                 |
+| disk.space_used_perc | device: vda3                                   |
+|                      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+|                      | mount_point: /                                 |
+| http_response_time   | url: http://0.0.0.0:8774/                      |
+|                      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+|                      | service: compute-api                           |
+| http_response_time   | url: http://0.0.0.0:35357/                     |
+|                      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+|                      | service: identity-api                          |
+| http_response_time   | url: http://0.0.0.0:9292/                      |
+|                      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+|                      | service: image-api                             |
+| http_response_time   | url: http://0.0.0.0:9696/                      |
+|                      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+|                      | service: network-api                           |
+| http_response_time   | url: http://0.0.0.0:8080/healthcheck           |
+|                      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+|                      | service: object-store-api                      |
+| http_response_time   | url: http://0.0.0.0:8776/                      |
+|                      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+|                      | service: volume-api                            |
+| http_status          | url: http://0.0.0.0:8774/                      |
+|                      | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de |
+|                      | service: compute-api                           |
++----------------------+------------------------------------------------+
 </pre>
 </div>
 </div>
@@ -13061,7 +12863,7 @@ List measurements for the specified metric.
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>monasca measurement-list --dimensions <span class="nv">hostname</span><span class="o">=</span>d52-54-77-77-01-01.vj8.cloud.suse.de --limit <span class="m">5</span> cpu.user_perc -120
@@ -13071,33 +12873,56 @@ List measurements for the specified metric.
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th>name</th>
+<th>dimensions</th>
+<th>timestamp</th>
+<th>value        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> cpu.user_perc</td>
+<td>hostname: 01.vj8.cloud.suse.de</td>
+<td>2019-06-06T08:13:08.170Z</td>
+<td>14.200 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T08:13:23.184Z</td>
+<td>16.100 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T08:13:38.202Z</td>
+<td>15.100 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T08:13:53.213Z</td>
+<td>30.900 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T08:14:08.296Z</td>
+<td>14.100 </td>
+</tr>
+</tbody>
+</table>
 
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>+---------------+------------------------------------------------+--------------------------+--------------+------------+
-| name          | dimensions                                     | timestamp                | value        | value_meta |
-+---------------+------------------------------------------------+--------------------------+--------------+------------+
-| cpu.user_perc | hostname: d52-54-77-77-01-01.vj8.cloud.suse.de | 2019-06-03T06:50:12.321Z |       16.900 |            |
-|               |                                                | 2019-06-03T06:50:27.331Z |       15.200 |            |
-|               |                                                | 2019-06-03T06:50:42.366Z |       21.600 |            |
-|               |                                                | 2019-06-03T06:50:57.356Z |       25.000 |            |
-|               |                                                | 2019-06-03T06:51:12.442Z |       17.400 |            |
-+---------------+------------------------------------------------+--------------------------+--------------+------------+
-</pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13182,38 +13007,96 @@ List measurement statistics for the specified metric.
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>monasca metric-statistics
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>monasca metric-statistics --group_by hostname --period <span class="m">60</span> cpu.user_perc max -4
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th>name</th>
+<th>dimensions</th>
+<th>timestamp</th>
+<th>max          </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> cpu.user_perc</td>
+<td>hostname: d51.vj8.cloud.suse.de</td>
+<td>2019-06-06T10:16:00Z</td>
+<td>30.700 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T10:17:00Z</td>
+<td>31.000 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T10:18:00Z</td>
+<td>26.900 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T10:19:00Z</td>
+<td>27.400 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T10:20:00Z</td>
+<td>19.200 </td>
+</tr>
+<tr>
+<td> cpu.user_perc</td>
+<td>hostname: d52.vj8.cloud.suse.de</td>
+<td>2019-06-06T10:16:00Z</td>
+<td>44.000 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T10:17:00Z</td>
+<td>47.400 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T10:18:00Z</td>
+<td>46.100 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T10:19:00Z</td>
+<td>46.600 </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2019-06-06T10:20:00Z</td>
+<td>46.000 </td>
+</tr>
+</tbody>
+</table>
 
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>usage: monasca metric-statistics [-h] [--dimensions &lt;KEY1=VALUE1,KEY2=VALUE2...&gt;] [--endtime &lt;UTC_END_TIME&gt;] [--period &lt;PERIOD&gt;] [--offset &lt;OFFSET LOCATION&gt;] [--limit &lt;RETURN LIMIT&gt;]
-                                 [--merge_metrics] [--group_by &lt;KEY1,KEY2,...&gt;] [--tenant-id &lt;TENANT_ID&gt;] [-j]
-                                 &lt;METRIC_NAME&gt; &lt;STATISTICS&gt; &lt;UTC_START_TIME&gt;
-monasca metric-statistics: error: too few arguments
-</pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13286,7 +13169,7 @@ Create notification.
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>monasca notification-create <span class="s2">&quot;Email Notification&quot;</span> EMAIL monty.python@suse.com
@@ -13311,27 +13194,27 @@ Create notification.
   &#34;name&#34;: &#34;Email Notification&#34;, 
   &#34;links&#34;: [
     {
-      &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/notification-methods/23753384-8564-43d7-a6c3-d4681dd7b5a2&#34;, 
+      &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/notification-methods/41c6dc58-9c1b-4a0e-a6a8-1c877697c5b4&#34;, 
       &#34;rel&#34;: &#34;self&#34;
     }
   ], 
   &#34;period&#34;: 0, 
   &#34;address&#34;: &#34;monty.python@suse.com&#34;, 
   &#34;type&#34;: &#34;EMAIL&#34;, 
-  &#34;id&#34;: &#34;23753384-8564-43d7-a6c3-d4681dd7b5a2&#34;
+  &#34;id&#34;: &#34;41c6dc58-9c1b-4a0e-a6a8-1c877697c5b4&#34;
 }
 {
   &#34;name&#34;: &#34;Webhook Notification&#34;, 
   &#34;links&#34;: [
     {
-      &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/notification-methods/d8912a3d-78e3-43e4-9015-1f4f9a990a35&#34;, 
+      &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/notification-methods/7408ad27-790e-49aa-ab34-0a8583249da6&#34;, 
       &#34;rel&#34;: &#34;self&#34;
     }
   ], 
   &#34;period&#34;: 0, 
   &#34;address&#34;: &#34;http://requestbin.net/r/zo9flhzo&#34;, 
   &#34;type&#34;: &#34;WEBHOOK&#34;, 
-  &#34;id&#34;: &#34;d8912a3d-78e3-43e4-9015-1f4f9a990a35&#34;
+  &#34;id&#34;: &#34;7408ad27-790e-49aa-ab34-0a8583249da6&#34;
 }
 </pre>
 </div>
@@ -13343,7 +13226,7 @@ Create notification.
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>monasca notification-list -j
@@ -13368,27 +13251,27 @@ Create notification.
     &#34;name&#34;: &#34;Email Notification&#34;, 
     &#34;links&#34;: [
       {
-        &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/notification-methods/23753384-8564-43d7-a6c3-d4681dd7b5a2&#34;, 
+        &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/notification-methods/41c6dc58-9c1b-4a0e-a6a8-1c877697c5b4&#34;, 
         &#34;rel&#34;: &#34;self&#34;
       }
     ], 
     &#34;period&#34;: 0, 
     &#34;address&#34;: &#34;monty.python@suse.com&#34;, 
     &#34;type&#34;: &#34;EMAIL&#34;, 
-    &#34;id&#34;: &#34;23753384-8564-43d7-a6c3-d4681dd7b5a2&#34;
+    &#34;id&#34;: &#34;41c6dc58-9c1b-4a0e-a6a8-1c877697c5b4&#34;
   }, 
   {
     &#34;name&#34;: &#34;Webhook Notification&#34;, 
     &#34;links&#34;: [
       {
-        &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/notification-methods/d8912a3d-78e3-43e4-9015-1f4f9a990a35&#34;, 
+        &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/notification-methods/7408ad27-790e-49aa-ab34-0a8583249da6&#34;, 
         &#34;rel&#34;: &#34;self&#34;
       }
     ], 
     &#34;period&#34;: 0, 
     &#34;address&#34;: &#34;http://requestbin.net/r/zo9flhzo&#34;, 
     &#34;type&#34;: &#34;WEBHOOK&#34;, 
-    &#34;id&#34;: &#34;d8912a3d-78e3-43e4-9015-1f4f9a990a35&#34;
+    &#34;id&#34;: &#34;7408ad27-790e-49aa-ab34-0a8583249da6&#34;
   }
 ]
 </pre>
@@ -13446,7 +13329,7 @@ GET|PUT|PATCH|DELETE /v2.0/alarm-definitions/{alarm-definition-id}
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>monasca <span class="nb">help</span> alarm-definition-create
@@ -13517,7 +13400,7 @@ Create an alarm definition.
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>monasca alarm-definition-create simple-alarm <span class="s2">&quot;max(cpu.user_time_sec{}, 60) &gt; 0.8 times 3&quot;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>monasca alarm-definition-create simple-alarm <span class="s2">&quot;max(cpu.user_perc{}, 60) &gt; 0.8 times 3&quot;</span>
 </pre></div>
 
 </div>
@@ -13540,7 +13423,7 @@ Create an alarm definition.
   &#34;description&#34;: &#34;&#34;, 
   &#34;links&#34;: [
     {
-      &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/alarm-definitions/b47ecaf5-c381-44ed-ba05-98537b83b486&#34;, 
+      &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/alarm-definitions/1ce39823-f192-4ede-bf15-ae1501284de9&#34;, 
       &#34;rel&#34;: &#34;self&#34;
     }
   ], 
@@ -13549,8 +13432,8 @@ Create an alarm definition.
   &#34;name&#34;: &#34;simple-alarm&#34;, 
   &#34;actions_enabled&#34;: true, 
   &#34;undetermined_actions&#34;: [], 
-  &#34;expression&#34;: &#34;max(cpu.user_time_sec{}, 60) &gt; 0.8 times 3&#34;, 
-  &#34;id&#34;: &#34;b47ecaf5-c381-44ed-ba05-98537b83b486&#34;, 
+  &#34;expression&#34;: &#34;max(cpu.user_perc{}, 60) &gt; 0.8 times 3&#34;, 
+  &#34;id&#34;: &#34;1ce39823-f192-4ede-bf15-ae1501284de9&#34;, 
   &#34;severity&#34;: &#34;LOW&#34;
 }
 </pre>
@@ -13602,7 +13485,7 @@ Create an alarm definition.
   &#34;description&#34;: &#34;&#34;, 
   &#34;links&#34;: [
     {
-      &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/alarm-definitions/98451a3c-7c9b-4a25-b0e1-f42ce596ebb4&#34;, 
+      &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/alarm-definitions/f236329c-0c1a-41c1-a59c-bc0afe971f56&#34;, 
       &#34;rel&#34;: &#34;self&#34;
     }
   ], 
@@ -13612,7 +13495,7 @@ Create an alarm definition.
   &#34;actions_enabled&#34;: true, 
   &#34;undetermined_actions&#34;: [], 
   &#34;expression&#34;: &#34;max(test-metric{}) &gt; 80&#34;, 
-  &#34;id&#34;: &#34;98451a3c-7c9b-4a25-b0e1-f42ce596ebb4&#34;, 
+  &#34;id&#34;: &#34;f236329c-0c1a-41c1-a59c-bc0afe971f56&#34;, 
   &#34;severity&#34;: &#34;LOW&#34;
 }
 {
@@ -13621,7 +13504,7 @@ Create an alarm definition.
   &#34;description&#34;: &#34;&#34;, 
   &#34;links&#34;: [
     {
-      &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/alarm-definitions/7adb78a5-16a8-4ff8-bcb6-b355b690ad31&#34;, 
+      &#34;href&#34;: &#34;http://192.168.238.3:8070/v2.0/alarm-definitions/3e6a982a-f3dc-4e3f-8318-e10c62b476f6&#34;, 
       &#34;rel&#34;: &#34;self&#34;
     }
   ], 
@@ -13633,7 +13516,7 @@ Create an alarm definition.
   &#34;actions_enabled&#34;: true, 
   &#34;undetermined_actions&#34;: [], 
   &#34;expression&#34;: &#34;max(test-metric{}) &gt; 80&#34;, 
-  &#34;id&#34;: &#34;7adb78a5-16a8-4ff8-bcb6-b355b690ad31&#34;, 
+  &#34;id&#34;: &#34;3e6a982a-f3dc-4e3f-8318-e10c62b476f6&#34;, 
   &#34;severity&#34;: &#34;LOW&#34;
 }
 </pre>
@@ -13699,7 +13582,7 @@ Successfully created metric
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>monasca alarm-list --metric-name <span class="s2">&quot;test-metric&quot;</span>
@@ -13709,32 +13592,60 @@ Successfully created metric
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th>id</th>
+<th>alarm_definition_name</th>
+<th>metric_name</th>
+<th>metric_dimensions</th>
+<th>severity</th>
+<th>state        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td>match by hostname</td>
+<td>test-metric</td>
+<td>hostname: foo</td>
+<td>LOW</td>
+<td>UNDETERMINED </td>
+</tr>
+<tr>
+<td> 2</td>
+<td>match name only</td>
+<td>test-metric</td>
+<td>hostname: foo</td>
+<td>LOW</td>
+<td>UNDETERMINED </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>test-metric</td>
+<td>hostname: bar</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> 3</td>
+<td>match by hostname</td>
+<td>test-metric</td>
+<td>hostname: bar</td>
+<td>LOW</td>
+<td>UNDETERMINED </td>
+</tr>
+</tbody>
+</table>
 
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>+--------------------------------------+--------------------------------------+-----------------------+-------------+-------------------+----------+--------------+-----------------+------+-------------------------+----------------------+----------------------+
-| id                                   | alarm_definition_id                  | alarm_definition_name | metric_name | metric_dimensions | severity | state        | lifecycle_state | link | state_updated_timestamp | updated_timestamp    | created_timestamp    |
-+--------------------------------------+--------------------------------------+-----------------------+-------------+-------------------+----------+--------------+-----------------+------+-------------------------+----------------------+----------------------+
-| 1f4fb8a3-12fb-4627-857a-a0abf756fa59 | 7adb78a5-16a8-4ff8-bcb6-b355b690ad31 | match by hostname     | test-metric | hostname: foo     | LOW      | UNDETERMINED | None            | None | 2019-06-03T08:51:50Z    | 2019-06-03T08:51:50Z | 2019-06-03T08:51:50Z |
-| 2941a8fc-8920-4e59-8073-1dd85b82c287 | 7adb78a5-16a8-4ff8-bcb6-b355b690ad31 | match by hostname     | test-metric | hostname: bar     | LOW      | UNDETERMINED | None            | None | 2019-06-03T08:51:53Z    | 2019-06-03T08:51:53Z | 2019-06-03T08:51:53Z |
-| 4ee57382-f529-4fb3-b83b-6a2cb0eb6e6a | 98451a3c-7c9b-4a25-b0e1-f42ce596ebb4 | match name only       | test-metric | hostname: foo     | LOW      | UNDETERMINED | None            | None | 2019-06-03T08:51:50Z    | 2019-06-03T08:51:50Z | 2019-06-03T08:51:50Z |
-|                                      |                                      |                       | test-metric | hostname: bar     |          |              |                 |      |                         |                      |                      |
-+--------------------------------------+--------------------------------------+-----------------------+-------------+-------------------+----------+--------------+-----------------+------+-------------------------+----------------------+----------------------+
-</pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
