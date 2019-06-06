@@ -14062,7 +14062,8 @@ The repository was unable to process your request (HTTP 500) (Request-ID: req-52
 <li>Horizon session expired</li>
 </ul>
 <h3 id="Possible-solutions">Possible solutions<a class="anchor-link" href="#Possible-solutions">&#182;</a></h3><ul>
-<li>Change project in Horizon</li>
+<li>Make sure <em>monasca</em> project is still selected in Horizon</li>
+<li>Reload Horizon and re-login if needed</li>
 </ul>
 
 </div>
@@ -14079,7 +14080,11 @@ The repository was unable to process your request (HTTP 500) (Request-ID: req-52
 </ul>
 <h3 id="Possible-solutions">Possible solutions<a class="anchor-link" href="#Possible-solutions">&#182;</a></h3><ul>
 <li>Redefine alarms in the right project</li>
-<li>Restart monasca-thresh and Storm (respect correct stop/start sequence)</li>
+<li>Restart services:<ul>
+<li>Stop monasca-thresh, storm-nimbus, storm-supervisor [, kafka, zookeeper]</li>
+<li>Start [zookeeper, kafka,] storm-supervisor, storm-nimbus, monasca-thresh</li>
+</ul>
+</li>
 </ul>
 
 </div>
